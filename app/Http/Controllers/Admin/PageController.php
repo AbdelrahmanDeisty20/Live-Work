@@ -60,3 +60,4 @@ class PageController extends Controller
         return redirect()->back()->with('success', 'Page element deleted successfully.');
     }
 }
+//aaaaa
