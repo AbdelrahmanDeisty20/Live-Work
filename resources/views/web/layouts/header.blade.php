@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
     
     <!-- Link to external stylesheet -->
-    <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
+   <link rel="stylesheet" href="{{ secure_asset('assets/style.css') }}">
     
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
