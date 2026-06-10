@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aetheria System Dashboard - Creative administrative interface control.">
+    <title>Aetheria | Creative System Control</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to dashboard stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Cyber Background Layer -->
+    <div class="dashboard-bg">
+        <div class="glow-orb orb-left"></div>
+        <div class="glow-orb orb-right"></div>
+        <div class="grid-lines"></div>
+    </div>
+
+    <!-- Sidebar Menu Dock -->
+    <aside>
+        <div class="brand-section">
+            <h1 class="brand-title">&lt;Aetheria.sys /&gt;</h1>
+            <div class="brand-status">
+                <span class="pulse-dot"></span>
+                Node active: 198.51.10.1
+            </div>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="menu-item active" data-tab="overview">
+                <i data-lucide="layout-dashboard" style="width:18px;height:18px;"></i>
+                Overview Panel
+            </li>
+            <li class="menu-item" data-tab="projects">
+                <i data-lucide="folder-git-2" style="width:18px;height:18px;"></i>
+                Manage Projects
+            </li>
+            <li class="menu-item" data-tab="inquiries">
+                <i data-lucide="message-square" style="width:18px;height:18px;"></i>
+                Client Messages
+            </li>
+            <li class="menu-item" data-tab="system">
+                <i data-lucide="cpu" style="width:18px;height:18px;"></i>
+                Node Status
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="profile-avatar">
+                <img src="../images/avatar.png" alt="Admin avatar image">
+            </div>
+            <div class="profile-info">
+                <h4>Aetheria Host</h4>
+                <p>Root Access Level</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Dashboard Frame -->
+    <main>
+        <!-- Header -->
+        <header>
+            <div class="search-box">
+                <i data-lucide="search" style="width:16px;height:16px;color:var(--text-secondary);"></i>
+                <input type="text" placeholder="Search system routes..." aria-label="Search inputs">
+                <span class="search-shortcut">⌘K</span>
+            </div>
+
+            <div class="header-meta">
+                <div class="meta-metric">
+                    <span>Response:</span>
+                    <span class="val">14 ms</span>
+                </div>
+                <div class="meta-metric">
+                    <span>Traffic:</span>
+                    <span class="val">99.8%</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard views container -->
+        <div class="dashboard-content">
+            
+            <!-- OVERVIEW PANEL SECTION -->
+            <div class="dashboard-section active" id="overview">
+                <!-- Top Statistics Cards -->
+                <div class="stats-grid">
+                    <!-- Stat 1 -->
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>Unique Views</span>
+                            <div class="stat-icon-box"><i data-lucide="eye" style="width:16px;height:16px;"></i></div>
+                        </div>
+                        <span class="stat-val">3,842</span>
+                        <div class="stat-trend trend-up">
+                            <i data-lucide="arrow-up-right" style="width:14px;height:14px;"></i>
+                            +12.4% this week
+                        </div>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>Inquiries Logged</span>
+                            <div class="stat-icon-box"><i data-lucide="message-square-plus" style="width:16px;height:16px;"></i></div>
+                        </div>
+                        <span class="stat-val">48</span>
+                        <div class="stat-trend trend-up">
+                            <i data-lucide="arrow-up-right" style="width:14px;height:14px;"></i>
+                            +8.1% this week
+                        </div>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>Server Load</span>
+                            <div class="stat-icon-box"><i data-lucide="activity" style="width:16px;height:16px;"></i></div>
+                        </div>
+                        <span class="stat-val">1.24%</span>
+                        <div class="stat-trend trend-down">
+                            <i data-lucide="arrow-down-left" style="width:14px;height:14px;"></i>
+                            -0.4% stable
+                        </div>
+                    </div>
+                    <!-- Stat 4 -->
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>Active Deployments</span>
+                            <div class="stat-icon-box"><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i></div>
+                        </div>
+                        <span class="stat-val">3 / 3</span>
+                        <div class="stat-trend trend-up">
+                            <i data-lucide="shield-check" style="width:14px;height:14px;"></i>
+                            All SSL Verified
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mid charts & logs Row -->
+                <div class="visual-row">
+                    <!-- Interactive SVG Chart Card -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div class="chart-title-box">
+                                <h3>Network Metrics</h3>
+                                <p>Interactive representation of visitor patterns</p>
+                            </div>
+                            <div class="chart-toggle-buttons">
+                                <button class="chart-toggle-btn active" data-type="views">Views</button>
+                                <button class="chart-toggle-btn" data-type="inquiries">Inquiries</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <!-- SVG Rendered dynamically by script -->
+                        </div>
+                    </div>
+
+                    <!-- System Logs Console Box -->
+                    <div class="terminal-card">
+                        <div class="terminal-head">
+                            <div class="window-dots">
+                                <div class="dot dot-r"></div>
+                                <div class="dot dot-y"></div>
+                                <div class="dot dot-g"></div>
+                            </div>
+                            <span class="terminal-title">system_events.log</span>
+                            <i data-lucide="refresh-cw" style="width:12px;height:12px;opacity:0.4;cursor:pointer;"></i>
+                        </div>
+                        <div class="terminal-body" id="terminal-logs">
+                            <!-- Simulated logs filled dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom panels: Recent inquiries & projects table -->
+                <div class="data-row">
+                    <!-- Recent Inquiries -->
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>Transmission Envelope Queue</h3>
+                            <span class="proj-badge">Secure Stream</span>
+                        </div>
+                        <div class="messages-list">
+                            <!-- Message 1 -->
+                            <div class="message-item">
+                                <div class="message-meta">
+                                    <div>
+                                        <span class="sender-name">Sarah Jenkins</span>
+                                        <span class="sender-email">sarah@aurorastudios.com</span>
+                                    </div>
+                                    <span class="message-time">14:02:11</span>
+                                </div>
+                                <p class="message-body">We are looking for a Laravel expert to integrate a custom Filament panel onto our existing client database system. Please send us your availability details.</p>
+                            </div>
+                            <!-- Message 2 -->
+                            <div class="message-item">
+                                <div class="message-meta">
+                                    <div>
+                                        <span class="sender-name">Marcus Vance</span>
+                                        <span class="sender-email">marcus@helix-labs.io</span>
+                                    </div>
+                                    <span class="message-time">Yesterday</span>
+                                </div>
+                                <p class="message-body">Could you construct a real-time analytics dashboard with React? We need dynamic graphs and websocket nodes. Let's arrange a talk.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Panel Table -->
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>Index of Active Projects</h3>
+                            <i data-lucide="plus-circle" style="width:18px;height:18px;color:var(--neon-cyan);cursor:pointer;"></i>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Stack</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="font-weight:700;">Aetheria Portal</td>
+                                        <td><span class="proj-badge">Laravel 11</span></td>
+                                        <td><span class="proj-status status-active"><span class="pulse-dot"></span>Active</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:700;">Vortex Dashboard</td>
+                                        <td><span class="proj-badge">React</span></td>
+                                        <td><span class="proj-status status-active"><span class="pulse-dot"></span>Active</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:700;">Nova AI Portal</td>
+                                        <td><span class="proj-badge">Python</span></td>
+                                        <td><span class="proj-status status-maint"><span class="pulse-dot" style="background:var(--neon-purple);box-shadow:0 0 8px var(--neon-purple);"></span>Maint</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECTS PANEL SECTION (DUMMY PLACEHOLDER FOR ROUTE) -->
+            <div class="dashboard-section" id="projects">
+                <div class="panel-card" style="padding: 3rem; text-align: center; gap: 1rem;">
+                    <i data-lucide="terminal" style="width:48px;height:48px;color:var(--neon-cyan);margin:0 auto;"></i>
+                    <h2>Project Editor Console Active</h2>
+                    <p style="color:var(--text-secondary);max-width:500px;margin:0 auto;">Initialize project modifications via direct command injection, database seeding controls, or live asset route changes.</p>
+                </div>
+            </div>
+
+            <!-- INQUIRIES PANEL SECTION (DUMMY PLACEHOLDER FOR ROUTE) -->
+            <div class="dashboard-section" id="inquiries">
+                <div class="panel-card" style="padding: 3rem; text-align: center; gap: 1rem;">
+                    <i data-lucide="mail-warning" style="width:48px;height:48px;color:var(--neon-purple);margin:0 auto;"></i>
+                    <h2>Secure Message Decryption Stream</h2>
+                    <p style="color:var(--text-secondary);max-width:500px;margin:0 auto;">Decrypting incoming client envelopes using SHA-256 secure transport. Filter inquiries based on client rating, tags, or date logs.</p>
+                </div>
+            </div>
+
+            <!-- SYSTEM PANEL SECTION (DUMMY PLACEHOLDER FOR ROUTE) -->
+            <div class="dashboard-section" id="system">
+                <div class="panel-card" style="padding: 3rem; text-align: center; gap: 1rem;">
+                    <i data-lucide="cpu" style="width:48px;height:48px;color:var(--neon-green);margin:0 auto;"></i>
+                    <h2>Sys::Hardware Nodes Diagnostics</h2>
+                    <p style="color:var(--text-secondary);max-width:500px;margin:0 auto;">Core memory load, active storage nodes, network bandwidth latency trackers, and server runtime properties are fully functional.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- CONSOLE TOAST NOTIFICATION -->
+    <div class="console-toast-container">
+        <div class="console-toast" id="console-toast">
+            <span id="toast-text">SYS:: CONNECTING TO DATABASE STREAM...</span>
+        </div>
+    </div>
+
+    <!-- Script loading -->
+    <script src="./script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

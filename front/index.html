@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyber-Constellation Portfolio - Sophisticated interactive full-stack architecture design.">
+    <title>Aetheria | Creative Full-Stack Engineer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+    <!-- Cyber Background Layer -->
+    <div class="bg-layer">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="cyber-overlay"></div>
+    </div>
+
+    <!-- Header navigation dock -->
+    <header>
+        <div class="container">
+            <nav class="navbar-cyber">
+                <a href="#" class="logo-cyber">
+                    &lt;Aetheria<span>.dev</span> /&gt;
+                </a>
+                <ul class="nav-links-cyber">
+                    <li class="active"><a href="#about">About</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="btn-terminal" onclick="location.href='#contact'">Let's talk</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="about">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-info">
+                    <div class="hero-badge-cyber">
+                        <span class="blink-dot"></span>
+                        SECURE ROOT SHELL ACCESS ACTIVE
+                    </div>
+                    <h1 class="hero-title-cyber">
+                        Engineering <span class="glow-neon">Interactive</span> Solutions & Clean Systems.
+                    </h1>
+                    <p class="hero-desc-cyber">
+                        I bridge robust backend microservices (Laravel 11 / PHP 8) with high-fidelity, interactive, and responsive web systems.
+                    </p>
+                    <div class="hero-actions-cyber">
+                        <button class="btn-neon" onclick="location.href='#works'">
+                            Execute Works_
+                            <i data-lucide="terminal" style="width:16px;height:16px;stroke-width:2.5;"></i>
+                        </button>
+                        <button class="btn-outline-cyber" onclick="location.href='#contact'">
+                            Connect Session
+                            <i data-lucide="network" style="width:16px;height:16px;"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-frame-wrapper">
+                    <div class="terminal-frame">
+                        <div class="terminal-header">
+                            <div class="window-dots">
+                                <div class="dot dot-red"></div>
+                                <div class="dot dot-yellow"></div>
+                                <div class="dot dot-green"></div>
+                            </div>
+                            <span class="terminal-title">~/dev/avatar_display.sh</span>
+                            <span style="opacity:0.25;"><i data-lucide="settings" style="width:12px;height:12px;"></i></span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="avatar-container-cyber">
+                                <img src="./images/avatar.png" alt="Creative engineering profile placeholder">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS/WORKS SECTION -->
+    <section id="works">
+        <div class="container">
+            <div class="header-cyber">
+                <span class="tag-cyber">SYS::QUERY_WORKS</span>
+                <h2 class="title-cyber">Selected Architectures</h2>
+                <p class="desc-cyber">A catalogue of production systems built with optimal data routing, clean database integration, and high speed response ratios.</p>
+            </div>
+
+            <div class="projects-cyber-grid">
+                <!-- Project 1 -->
+                <div class="project-card-cyber">
+                    <div class="project-cover-cyber">
+                        <img src="./images/aetheria.png" alt="Aetheria Luxury Real Estate Portal Preview">
+                    </div>
+                    <div class="project-details-cyber">
+                        <div>
+                            <div class="project-tags-cyber">
+                                <span class="tag-badge-cyber">Laravel 11</span>
+                                <span class="tag-badge-cyber">Vue.js 3</span>
+                                <span class="tag-badge-cyber">SQLite</span>
+                            </div>
+                            <h3 class="project-title-cyber" style="margin-top:0.8rem;">Aetheria Real Estate</h3>
+                            <p class="project-desc-cyber" style="margin-top:0.5rem;">Luxury property search platform optimizing query execution speeds via customized indices and local memory storage maps.</p>
+                        </div>
+                        <a href="#" class="project-link-cyber" style="margin-top:1rem;">
+                            Initialize_Link
+                            <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card-cyber">
+                    <div class="project-cover-cyber">
+                        <img src="./images/vortex.png" alt="Vortex Data Analytics Dashboard Preview">
+                    </div>
+                    <div class="project-details-cyber">
+                        <div>
+                            <div class="project-tags-cyber">
+                                <span class="tag-badge-cyber">React 18</span>
+                                <span class="tag-badge-cyber">PHP 8.3</span>
+                                <span class="tag-badge-cyber">Tailwind CSS</span>
+                            </div>
+                            <h3 class="project-title-cyber" style="margin-top:0.8rem;">Vortex Dashboard</h3>
+                            <p class="project-desc-cyber" style="margin-top:0.5rem;">Metrics logging system streaming client diagnostics via web-sockets with real-time vector graphs and data throttle layers.</p>
+                        </div>
+                        <a href="#" class="project-link-cyber" style="margin-top:1rem;">
+                            Initialize_Link
+                            <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card-cyber">
+                    <div class="project-cover-cyber">
+                        <img src="./images/nova.png" alt="Nova AI Asset Manager preview">
+                    </div>
+                    <div class="project-details-cyber">
+                        <div>
+                            <div class="project-tags-cyber">
+                                <span class="tag-badge-cyber">Laravel JobQueue</span>
+                                <span class="tag-badge-cyber">OpenAI API</span>
+                                <span class="tag-badge-cyber">Python</span>
+                            </div>
+                            <h3 class="project-title-cyber" style="margin-top:0.8rem;">Nova AI Portal</h3>
+                            <p class="project-desc-cyber" style="margin-top:0.5rem;">AI asset classification manager utilizing asynchronous jobs and workers to index, prompt, and process digital files.</p>
+                        </div>
+                        <a href="#" class="project-link-cyber" style="margin-top:1rem;">
+                            Initialize_Link
+                            <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAPABILITIES SECTION -->
+    <section id="skills">
+        <div class="container">
+            <div class="header-cyber">
+                <span class="tag-cyber">SYS::QUERY_STACK</span>
+                <h2 class="title-cyber">Core Integration Capabilities</h2>
+                <p class="desc-cyber">The tech stacks and modules I deploy to solve modern scaling challenges.</p>
+            </div>
+
+            <div class="skills-matrix">
+                <!-- Backend -->
+                <div class="skill-matrix-card">
+                    <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
+                    <h3>Backend Infrastructure</h3>
+                    <div class="skill-list-cyber">
+                        <div class="skill-element-cyber">
+                            <div class="skill-label-cyber">
+                                <span class="skill-name-cyber">PHP 8 / Laravel 11</span>
+                                <span class="skill-percent-cyber">95%</span>
+                            </div>
+                            <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="95"></div></div>
+                        </div>
+                        <div class="skill-element-cyber">
+                            <div class="skill-label-cyber">
+                                <span class="skill-name-cyber">RESTful API Design</span>
+                                <span class="skill-percent-cyber">90%</span>
+                            </div>
+                            <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="90"></div></div>
+                        </div>
+                        <div class="skill-element-cyber">
+                            <div class="skill-label-cyber">
+                                <span class="skill-name-cyber">SQL Database Optimization</span>
+                                <span class="skill-percent-cyber">85%</span>
+                            </div>
+                            <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="skill-matrix-card">
+                    <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
+                    <h3>Frontend Engineering</h3>
+                    <div class="skill-list-cyber">
+                        <div class="skill-element-cyber">
+                            <div class="skill-label-cyber">
+                                <span class="skill-name-cyber">JavaScript ES6 / TypeScript</span>
+                                <span class="skill-percent-cyber">90%</span>
+                            </div>
+                            <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="90"></div></div>
+                        </div>
+                        <div class="skill-element-cyber">
+                            <div class="skill-label-cyber">
+                                <span class="skill-name-cyber">Vue.js / React</span>
+                                <span class="skill-percent-cyber">85%</span>
+                            </div>
+                            <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
+                        </div>
+                        <div class="skill-element-cyber">
+                            <div class="skill-label-cyber">
+                                <span class="skill-name-cyber">CSS Grid / Tailwind CSS</span>
+                                <span class="skill-percent-cyber">92%</span>
+                            </div>
+                            <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="92"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design/Ops -->
+                <div class="skill-matrix-card">
+                    <div class="skill-card-icon-cyber"><i data-lucide="git-branch" style="width:20px;height:20px;"></i></div>
+                    <h3>Design & DevOps</h3>
+                    <div class="skill-list-cyber">
+                        <div class="skill-element-cyber">
+                            <div class="skill-label-cyber">
+                                <span class="skill-name-cyber">Git / GitHub Actions</span>
+                                <span class="skill-percent-cyber">80%</span>
+                            </div>
+                            <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="80"></div></div>
+                        </div>
+                        <div class="skill-element-cyber">
+                            <div class="skill-label-cyber">
+                                <span class="skill-name-cyber">Docker Containers</span>
+                                <span class="skill-percent-cyber">75%</span>
+                            </div>
+                            <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="75"></div></div>
+                        </div>
+                        <div class="skill-element-cyber">
+                            <div class="skill-label-cyber">
+                                <span class="skill-name-cyber">Figma Prototyping</span>
+                                <span class="skill-percent-cyber">85%</span>
+                            </div>
+                            <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" style="padding-bottom: 8rem;">
+        <div class="container">
+            <div class="header-cyber">
+                <span class="tag-cyber">SYS::ESTABLISH_SESSION</span>
+                <h2 class="title-cyber">Initiate Connection</h2>
+                <p class="desc-cyber">Establish a secure port request to dispatch message details and discuss product deployments.</p>
+            </div>
+
+            <div class="contact-cyber-grid">
+                <div class="contact-card-cyber">
+                    <!-- Info 1 -->
+                    <div class="info-box-cyber">
+                        <div class="info-icon-cyber"><i data-lucide="mail" style="width:18px;height:18px;"></i></div>
+                        <div class="info-details-cyber">
+                            <h4>Port Address</h4>
+                            <p>hello@aetheria.studio</p>
+                        </div>
+                    </div>
+                    <!-- Info 2 -->
+                    <div class="info-box-cyber">
+                        <div class="info-icon-cyber"><i data-lucide="map-pin" style="width:18px;height:18px;"></i></div>
+                        <div class="info-details-cyber">
+                            <h4>Base Node</h4>
+                            <p>Cairo, Egypt</p>
+                        </div>
+                    </div>
+                    <!-- Info 3 -->
+                    <div class="info-box-cyber">
+                        <div class="info-icon-cyber"><i data-lucide="cpu" style="width:18px;height:18px;"></i></div>
+                        <div class="info-details-cyber">
+                            <h4>Availability</h4>
+                            <p>24/7 Remote Services</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Box -->
+                <div class="form-box-cyber">
+                    <form id="cyber-contact-form">
+                        <div class="form-group-cyber">
+                            <label for="usr-name">Client Identifier</label>
+                            <div class="input-cyber-wrapper">
+                                <input type="text" id="usr-name" class="input-cyber" required placeholder="e.g. John Doe">
+                            </div>
+                        </div>
+                        <div class="form-group-cyber">
+                            <label for="usr-email">Email Node Address</label>
+                            <div class="input-cyber-wrapper">
+                                <input type="email" id="usr-email" class="input-cyber" required placeholder="e.g. client@domain.com">
+                            </div>
+                        </div>
+                        <div class="form-group-cyber">
+                            <label for="usr-message">Transmission Details</label>
+                            <div class="input-cyber-wrapper">
+                                <textarea id="usr-message" class="input-cyber" required placeholder="Describe task scope, technologies, timeline..."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit-cyber">
+                            Dispatch Package
+                            <i data-lucide="send" style="width:16px;height:16px;stroke-width:2.5;"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-cyber-content">
+                <a href="#" class="logo-cyber">
+                    &lt;Aetheria<span>.dev</span> /&gt;
+                </a>
+                <div class="social-links-cyber">
+                    <a href="#" class="social-btn-cyber" aria-label="GitHub"><i data-lucide="github" style="width:18px;height:18px;"></i></a>
+                    <a href="#" class="social-btn-cyber" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:18px;height:18px;"></i></a>
+                    <a href="#" class="social-btn-cyber" aria-label="Twitter"><i data-lucide="twitter" style="width:18px;height:18px;"></i></a>
+                </div>
+                <p class="credit-cyber">&copy; 2026 Aetheria Dev. All rights reserved. Secure host session verified.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CONSOLE TOAST NOTIFICATION -->
+    <div class="console-toast-container">
+        <div class="console-toast" id="console-toast">
+            <span id="toast-text">SYS:: CONNECTING TO DATABASE STREAM...</span>
+        </div>
+    </div>
+
+    <!-- Script execution link -->
+    <script src="./script.js"></script>
+    <script>
+        // Init Lucide after DOM load
+        lucide.createIcons();
+    </script>
+</body>
+</html>
