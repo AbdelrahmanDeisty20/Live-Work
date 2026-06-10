@@ -39,3 +39,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('admin.login');
     Route::post('/login-send', [AuthController::class, 'login'])->name('admin.login.post');
 });
+Route::get('/clear-all', function() {
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    Artisan::call('cache:clear');
+    return "All caches cleared!";
+});
