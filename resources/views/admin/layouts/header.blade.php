@@ -18,7 +18,7 @@
     
     <!-- Link to dashboard stylesheet -->
     @unless(View::hasSection('is-login'))
-        <link rel="stylesheet" href="{{ asset('assets/dashboard/style.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('assets/dashboard/style.css') }}">
     @endunless
     
     <!-- Lucide Icons CDN -->

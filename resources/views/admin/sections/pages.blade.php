@@ -33,7 +33,7 @@
                                     @if($page->type === 'image')
                                         @if($page->value)
                                             <div style="width:60px; height:40px; border-radius:4px; overflow:hidden; border:1px solid var(--border-color); background:rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center;">
-                                                <img src="{{ asset('storage/' . $page->value) }}" alt="{{ $page->key }}" style="width:100%; height:100%; object-fit:cover;">
+                                                <img src="{{ secure_asset('storage/' . $page->value) }}" alt="{{ $page->key }}" style="width:100%; height:100%; object-fit:cover;">
                                             </div>
                                         @else
                                             <span style="color:var(--text-muted);">No Image</span>

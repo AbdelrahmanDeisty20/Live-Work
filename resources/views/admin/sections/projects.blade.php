@@ -29,7 +29,7 @@
                                 <td>
                                     <div style="width:60px; height:40px; border-radius:4px; overflow:hidden; border:1px solid var(--border-color); background:rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center;">
                                         @if($work->image)
-                                            <img src="{{ asset('storage/' . $work->image) }}" alt="{{ $work->title }}" style="width:100%; height:100%; object-fit:cover;">
+                                            <img src="{{ secure_asset('storage/' . $work->image) }}" alt="{{ $work->title }}" style="width:100%; height:100%; object-fit:cover;">
                                         @else
                                             <i data-lucide="image" style="width:16px; height:16px; color:var(--text-muted);"></i>
                                         @endif

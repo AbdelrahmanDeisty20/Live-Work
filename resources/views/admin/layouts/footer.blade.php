@@ -8,7 +8,7 @@
     });
 </script>
 <script src="https://unpkg.com/lucide@latest"></script>
-<script src="{{ asset('assets/dashboard/script.js') }}"></script>
+<script src="{{ secure_asset('assets/dashboard/script.js') }}"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
