@@ -241,8 +241,9 @@
                 </div>
             </div>
 
-            <div class="projects-cyber-grid">
-                @forelse ($works as $work)
+            <div class="projects-slider-wrapper" style="position: relative; width: 100%; overflow: hidden;">
+                <div class="projects-cyber-grid">
+                    @forelse ($works as $work)
                     <div class="project-card-cyber">
                         <div class="project-cover-cyber">
                             @if(strpos($work->image, 'http') === 0)
@@ -335,6 +336,39 @@
                     </div>
                 @endforelse
             </div>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const container = document.querySelector(".projects-cyber-grid");
+                    const prevBtn = document.querySelector(".prev-projects");
+                    const nextBtn = document.querySelector(".next-projects");
+
+                    if (container && prevBtn && nextBtn) {
+                        const getScrollAmount = () => {
+                            const card = container.querySelector(".project-card-cyber");
+                            if (!card) return 300;
+                            const gapVal = parseFloat(getComputedStyle(container).gap);
+                            const gap = isNaN(gapVal) ? 24 : gapVal;
+                            return card.clientWidth + gap;
+                        };
+
+                        prevBtn.addEventListener("click", () => {
+                            container.scrollBy({
+                                left: -getScrollAmount(),
+                                behavior: "smooth"
+                            });
+                        });
+
+                        nextBtn.addEventListener("click", () => {
+                            container.scrollBy({
+                                left: getScrollAmount(),
+                                behavior: "smooth"
+                            });
+                        });
+                    }
+                });
+            </script>
 
 
         </div>
@@ -506,58 +540,6 @@
             });
         });
 
-        // Projects slider control script with console debugging logs
-        $(document).ready(function() {
-            const projContainer = document.querySelector(".projects-cyber-grid");
-            console.log("SYS:: Projects slider init. projContainer exists:", !!projContainer);
-            
-            $(document).on('click', '.prev-projects', function(e) {
-                e.preventDefault();
-                console.log("SYS:: Prev clicked.");
-                if (projContainer) {
-                    const card = projContainer.querySelector(".project-card-cyber");
-                    console.log("SYS:: Prev clicked. Card exists:", !!card);
-                    if (card) {
-                        const gapVal = parseFloat(getComputedStyle(projContainer).gap);
-                        const gap = isNaN(gapVal) ? 24 : gapVal;
-                        const scrollAmount = card.clientWidth + gap;
-                        console.log("SYS:: Prev info: clientWidth=" + card.clientWidth + ", gap=" + gap + ", scrollAmount=" + scrollAmount + ", currentScrollLeft=" + projContainer.scrollLeft);
-                        projContainer.scrollBy({
-                            left: -scrollAmount,
-                            behavior: "smooth"
-                        });
-                        setTimeout(() => {
-                            console.log("SYS:: Prev after scroll scrollLeft=" + projContainer.scrollLeft);
-                        }, 500);
-                    }
-                } else {
-                    console.log("SYS:: Prev clicked but projContainer is null!");
-                }
-            });
 
-            $(document).on('click', '.next-projects', function(e) {
-                e.preventDefault();
-                console.log("SYS:: Next clicked.");
-                if (projContainer) {
-                    const card = projContainer.querySelector(".project-card-cyber");
-                    console.log("SYS:: Next clicked. Card exists:", !!card);
-                    if (card) {
-                        const gapVal = parseFloat(getComputedStyle(projContainer).gap);
-                        const gap = isNaN(gapVal) ? 24 : gapVal;
-                        const scrollAmount = card.clientWidth + gap;
-                        console.log("SYS:: Next info: clientWidth=" + card.clientWidth + ", gap=" + gap + ", scrollAmount=" + scrollAmount + ", currentScrollLeft=" + projContainer.scrollLeft);
-                        projContainer.scrollBy({
-                            left: scrollAmount,
-                            behavior: "smooth"
-                        });
-                        setTimeout(() => {
-                            console.log("SYS:: Next after scroll scrollLeft=" + projContainer.scrollLeft);
-                        }, 500);
-                    }
-                } else {
-                    console.log("SYS:: Next clicked but projContainer is null!");
-                }
-            });
-        });
     </script>
 @endpush
