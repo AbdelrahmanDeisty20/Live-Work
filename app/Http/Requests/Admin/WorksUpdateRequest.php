@@ -18,7 +18,7 @@ class WorksUpdateRequest extends FormRequest
             'id'          => 'required|exists:works,id',
             'title'       => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'image'       => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'image'       => 'nullable|image',
             'link'        => 'required|string|max:255',
             'tags'        => 'nullable|string',   // comma-separated → tecknicals
         ];
