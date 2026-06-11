@@ -98,101 +98,124 @@
                                         elseif (str_contains($titleLower, 'game') || str_contains($titleLower, 'play') || str_contains($titleLower, 'unity') || str_contains($titleLower, 'unreal')) $icon = 'gamepad-2';
                                         elseif (str_contains($titleLower, 'network') || str_contains($titleLower, 'globe') || str_contains($titleLower, 'http') || str_contains($titleLower, 'dns')) $icon = 'globe';
                                     @endphp
-                                    <i data-lucide="{{ $icon }}" style="width:20px;height:20px;"></i>
+                                    <i data-lucide="{{ $icon }}" style="width:24px;height:24px;"></i>
                                 </div>
-                                <h3 style="margin-bottom: 0;">{{ $item->title }}</h3>
+                                <h3>{{ $item->title }}</h3>
+                                <span class="skill-tech-badge">SYS::{{ strtoupper(str_replace(' ', '_', $skill->title)) }}</span>
                             </div>
                         @endforeach
                     @endforeach
 
                     @if(!$hasSkills)
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">PHP 8 / Laravel 11</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:24px;height:24px;"></i></div>
+                            <h3>PHP 8 / Laravel 11</h3>
+                            <span class="skill-tech-badge">SYS::BACKEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">RESTful API Design</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:24px;height:24px;"></i></div>
+                            <h3>RESTful API Design</h3>
+                            <span class="skill-tech-badge">SYS::BACKEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">SQL Optimization</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:24px;height:24px;"></i></div>
+                            <h3>SQL Optimization</h3>
+                            <span class="skill-tech-badge">SYS::BACKEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="database" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Firebase Realtime DB</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="database" style="width:24px;height:24px;"></i></div>
+                            <h3>Firebase Realtime DB</h3>
+                            <span class="skill-tech-badge">SYS::DATABASE</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="database" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Redis Caching</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="database" style="width:24px;height:24px;"></i></div>
+                            <h3>Redis Caching</h3>
+                            <span class="skill-tech-badge">SYS::INFRASTRUCTURE</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="box" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Docker Containerization</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="box" style="width:24px;height:24px;"></i></div>
+                            <h3>Docker Containerization</h3>
+                            <span class="skill-tech-badge">SYS::DEVOPS</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="link" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">GraphQL APIs</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="link" style="width:24px;height:24px;"></i></div>
+                            <h3>GraphQL APIs</h3>
+                            <span class="skill-tech-badge">SYS::BACKEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Node.js / Express</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:24px;height:24px;"></i></div>
+                            <h3>Node.js / Express</h3>
+                            <span class="skill-tech-badge">SYS::BACKEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Python / Django</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:24px;height:24px;"></i></div>
+                            <h3>Python / Django</h3>
+                            <span class="skill-tech-badge">SYS::BACKEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="git-pull-request" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Git workflows</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="git-pull-request" style="width:24px;height:24px;"></i></div>
+                            <h3>Git workflows</h3>
+                            <span class="skill-tech-badge">SYS::VERSION_CONTROL</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="zap" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Serverless AWS Lambda</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="zap" style="width:24px;height:24px;"></i></div>
+                            <h3>Serverless AWS Lambda</h3>
+                            <span class="skill-tech-badge">SYS::CLOUD</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="hard-drive" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Bash Scripting</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="hard-drive" style="width:24px;height:24px;"></i></div>
+                            <h3>Bash Scripting</h3>
+                            <span class="skill-tech-badge">SYS::SYSTEM</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">JavaScript ES6 / TS</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:24px;height:24px;"></i></div>
+                            <h3>JavaScript ES6 / TS</h3>
+                            <span class="skill-tech-badge">SYS::FRONTEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Vue.js / React</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:24px;height:24px;"></i></div>
+                            <h3>Vue.js / React</h3>
+                            <span class="skill-tech-badge">SYS::FRONTEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">CSS Grid / Flexbox</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:24px;height:24px;"></i></div>
+                            <h3>CSS Grid / Flexbox</h3>
+                            <span class="skill-tech-badge">SYS::FRONTEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Tailwind CSS styling</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:24px;height:24px;"></i></div>
+                            <h3>Tailwind CSS styling</h3>
+                            <span class="skill-tech-badge">SYS::FRONTEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">HTML5 Semantics</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:24px;height:24px;"></i></div>
+                            <h3>HTML5 Semantics</h3>
+                            <span class="skill-tech-badge">SYS::FRONTEND</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="cloud" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">CI/CD Pipelines</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="cloud" style="width:24px;height:24px;"></i></div>
+                            <h3>CI/CD Pipelines</h3>
+                            <span class="skill-tech-badge">SYS::DEVOPS</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="cloud" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">AWS / GCP Admin</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="cloud" style="width:24px;height:24px;"></i></div>
+                            <h3>AWS / GCP Admin</h3>
+                            <span class="skill-tech-badge">SYS::CLOUD</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="box" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Kubernetes setup</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="box" style="width:24px;height:24px;"></i></div>
+                            <h3>Kubernetes setup</h3>
+                            <span class="skill-tech-badge">SYS::DEVOPS</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="git-branch" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">Figma Prototyping</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="git-branch" style="width:24px;height:24px;"></i></div>
+                            <h3>Figma Prototyping</h3>
+                            <span class="skill-tech-badge">SYS::DESIGN</span>
                         </div>
                         <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber"><i data-lucide="shield" style="width:20px;height:20px;"></i></div>
-                            <h3 style="margin-bottom: 0;">OWASP Security Top 10</h3>
+                            <div class="skill-card-icon-cyber"><i data-lucide="shield" style="width:24px;height:24px;"></i></div>
+                            <h3>OWASP Security Top 10</h3>
+                            <span class="skill-tech-badge">SYS::SECURITY</span>
                         </div>
                     @endif
                 </div>
