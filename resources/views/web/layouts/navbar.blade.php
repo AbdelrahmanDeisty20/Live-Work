@@ -15,13 +15,57 @@
             <a href="#" class="logo-cyber">
                 &lt;{{ $PageData['site_name'] }}<span>.dev</span> /&gt;
             </a>
-            <ul class="nav-links-cyber">
+            <ul class="nav-links-cyber" id="nav-links">
                 <li class="active"><a href="#about">About</a></li>
                 <li><a href="#works">Works</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="btn-terminal" onclick="location.href='#contact'">Let's talk</button>
+            <button class="mobile-menu-toggle-btn" id="mobile-menu-toggle" aria-label="Toggle Menu">
+                <i data-lucide="menu" id="menu-icon" style="width: 20px; height: 20px;"></i>
+            </button>
         </nav>
     </div>
 </header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtn = document.getElementById("mobile-menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+        const menuIcon = document.getElementById("menu-icon");
+
+        if (toggleBtn && navLinks) {
+            toggleBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                navLinks.classList.toggle("active");
+                
+                // Toggle Lucide Icon between menu and x
+                if (navLinks.classList.contains("active")) {
+                    menuIcon.setAttribute("data-lucide", "x");
+                } else {
+                    menuIcon.setAttribute("data-lucide", "menu");
+                }
+                if (window.lucide) { lucide.createIcons(); }
+            });
+
+            // Close menu when clicking on a link
+            navLinks.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                    menuIcon.setAttribute("data-lucide", "menu");
+                    if (window.lucide) { lucide.createIcons(); }
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener("click", (e) => {
+                if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    navLinks.classList.remove("active");
+                    menuIcon.setAttribute("data-lucide", "menu");
+                    if (window.lucide) { lucide.createIcons(); }
+                }
+            });
+        }
+    });
+</script>
