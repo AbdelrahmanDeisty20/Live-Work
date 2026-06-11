@@ -508,31 +508,31 @@
 
         // Projects slider control script for responsive layout
         $(document).ready(function() {
-            const projContainer = document.querySelector(".projects-cyber-grid");
-            const projPrevBtn = document.querySelector(".prev-projects");
-            const projNextBtn = document.querySelector(".next-projects");
+            const $grid = $('.projects-cyber-grid');
+            
+            $(document).on('click', '.prev-projects', function(e) {
+                e.preventDefault();
+                const $card = $grid.find('.project-card-cyber').first();
+                if ($card.length) {
+                    const gap = parseFloat($grid.css('gap'));
+                    const scrollAmount = $card.outerWidth() + (isNaN(gap) ? 24 : gap);
+                    $grid.animate({
+                        scrollLeft: $grid.scrollLeft() - scrollAmount
+                    }, 400);
+                }
+            });
 
-            if (projContainer && projPrevBtn && projNextBtn) {
-                const getProjScrollAmount = () => {
-                    const card = projContainer.querySelector(".project-card-cyber");
-                    if (!card) return 300;
-                    return card.clientWidth + parseFloat(getComputedStyle(projContainer).gap || 24);
-                };
-
-                projPrevBtn.addEventListener("click", () => {
-                    projContainer.scrollBy({
-                        left: -getProjScrollAmount(),
-                        behavior: "smooth"
-                    });
-                });
-
-                projNextBtn.addEventListener("click", () => {
-                    projContainer.scrollBy({
-                        left: getProjScrollAmount(),
-                        behavior: "smooth"
-                    });
-                });
-            }
+            $(document).on('click', '.next-projects', function(e) {
+                e.preventDefault();
+                const $card = $grid.find('.project-card-cyber').first();
+                if ($card.length) {
+                    const gap = parseFloat($grid.css('gap'));
+                    const scrollAmount = $card.outerWidth() + (isNaN(gap) ? 24 : gap);
+                    $grid.animate({
+                        scrollLeft: $grid.scrollLeft() + scrollAmount
+                    }, 400);
+                }
+            });
         });
     </script>
 @endpush
