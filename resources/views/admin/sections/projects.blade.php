@@ -101,6 +101,7 @@
         <div class="login-card-body" style="padding:2rem;">
             <form id="project-form" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <input type="hidden" name="_method" id="project-form-method" value="POST">
                 <input type="hidden" name="id" id="project-work-id" value="">
 
