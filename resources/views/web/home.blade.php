@@ -507,7 +507,7 @@
         });
 
         // Projects slider control script for responsive layout
-        document.addEventListener("DOMContentLoaded", () => {
+        $(document).ready(function() {
             const projContainer = document.querySelector(".projects-cyber-grid");
             const projPrevBtn = document.querySelector(".prev-projects");
             const projNextBtn = document.querySelector(".next-projects");
