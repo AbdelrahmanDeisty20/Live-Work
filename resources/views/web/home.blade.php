@@ -472,6 +472,7 @@
                 <!-- Contact Form Box -->
                 <div class="form-box-cyber">
                     <form id="cyber-contact-form">
+                        @csrf
                         <div class="form-group-cyber">
                             <label for="usr-name">Client Identifier</label>
                             <div class="input-cyber-wrapper">
