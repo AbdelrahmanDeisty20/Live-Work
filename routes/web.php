@@ -26,14 +26,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/works/{id}', [\App\Http\Controllers\Admin\WorkController::class, 'updateWork'])->name('admin.works.update');
         Route::delete('/works/{id}', [\App\Http\Controllers\Admin\WorkController::class, 'deleteWork'])->name('admin.works.destroy');
 
-        // Skills & Proficiencies Routes
+        // Skills Routes
         Route::post('/skills', [\App\Http\Controllers\Admin\SkillController::class, 'store'])->name('admin.skills.store');
         Route::put('/skills/{id}', [\App\Http\Controllers\Admin\SkillController::class, 'update'])->name('admin.skills.update');
         Route::delete('/skills/{id}', [\App\Http\Controllers\Admin\SkillController::class, 'destroy'])->name('admin.skills.destroy');
-        Route::get('/skills/{skillId}/contents', [\App\Http\Controllers\Admin\SkillController::class, 'getContents'])->name('admin.skills.contents');
-        Route::post('/skills/contents', [\App\Http\Controllers\Admin\SkillController::class, 'storeContent'])->name('admin.skills.contents.store');
-        Route::put('/skills/contents/{id}', [\App\Http\Controllers\Admin\SkillController::class, 'updateContent'])->name('admin.skills.contents.update');
-        Route::delete('/skills/contents/{id}', [\App\Http\Controllers\Admin\SkillController::class, 'destroyContent'])->name('admin.skills.contents.destroy');
     });
     // Auth routes
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('admin.login');

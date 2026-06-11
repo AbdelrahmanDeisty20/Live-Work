@@ -12,7 +12,7 @@ class HomeService
     public function index()
     {
         $works = Work::with('tecknicals')->get();
-        $skills = Skill::with('contents')->get();
+        $skills = Skill::get();
         $pages = Page::all()->pluck('value', 'key');
         $settings = Setting::first();
 

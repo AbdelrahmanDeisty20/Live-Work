@@ -8,11 +8,6 @@ class Skill extends Model
 {
     //
     protected $fillable = [
-        'title',
+        'name',
     ];
-
-    public function contents()
-    {
-        return $this->hasMany(Content::class);
-    }
 }

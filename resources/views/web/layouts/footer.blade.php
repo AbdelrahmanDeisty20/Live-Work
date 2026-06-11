@@ -92,7 +92,7 @@
         });
     </script>
     <!-- Script execution link -->
-   <script src="{{ secure_asset('assets/script.js') }}"></script>
+   <script src="{{ asset('assets/script.js') }}"></script>
     <script>
         // Init Lucide after DOM load
         lucide.createIcons();

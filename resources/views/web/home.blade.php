@@ -71,38 +71,36 @@
                 <div class="skills-matrix">
                     @php $hasSkills = false; @endphp
                     @foreach($skills as $skill)
-                        @foreach($skill->contents as $item)
-                            @php $hasSkills = true; @endphp
-                            <div class="skill-matrix-card">
-                                <div class="skill-card-icon-cyber">
-                                    @php
-                                        $titleLower = strtolower($item->title);
-                                        $icon = 'cpu';
-                                        if (str_contains($titleLower, 'php') || str_contains($titleLower, 'laravel') || str_contains($titleLower, 'back') || str_contains($titleLower, 'infra') || str_contains($titleLower, 'node') || str_contains($titleLower, 'python') || str_contains($titleLower, 'django') || str_contains($titleLower, 'ruby') || str_contains($titleLower, 'go') || str_contains($titleLower, 'java') || str_contains($titleLower, 'c#') || str_contains($titleLower, 'asp') || str_contains($titleLower, 'api') || str_contains($titleLower, 'rest')) $icon = 'terminal';
-                                        elseif (str_contains($titleLower, 'front') || str_contains($titleLower, 'dev') || str_contains($titleLower, 'web') || str_contains($titleLower, 'vue') || str_contains($titleLower, 'react') || str_contains($titleLower, 'angular') || str_contains($titleLower, 'js') || str_contains($titleLower, 'ts') || str_contains($titleLower, 'javascript') || str_contains($titleLower, 'typescript') || str_contains($titleLower, 'css') || str_contains($titleLower, 'html') || str_contains($titleLower, 'tailwind') || str_contains($titleLower, 'sass') || str_contains($titleLower, 'bootstrap')) $icon = 'layers';
-                                        elseif (str_contains($titleLower, 'design') || str_contains($titleLower, 'ui') || str_contains($titleLower, 'ux') || str_contains($titleLower, 'figma') || str_contains($titleLower, 'photoshop') || str_contains($titleLower, 'illustrator') || str_contains($titleLower, 'adobe') || str_contains($titleLower, 'sketch')) $icon = 'git-branch';
-                                        elseif (str_contains($titleLower, 'database') || str_contains($titleLower, 'sql') || str_contains($titleLower, 'db') || str_contains($titleLower, 'mysql') || str_contains($titleLower, 'postgres') || str_contains($titleLower, 'mongo') || str_contains($titleLower, 'oracle') || str_contains($titleLower, 'sqlite') || str_contains($titleLower, 'redis')) $icon = 'database';
-                                        elseif (str_contains($titleLower, 'cloud') || str_contains($titleLower, 'server') || str_contains($titleLower, 'aws') || str_contains($titleLower, 'gcp') || str_contains($titleLower, 'azure') || str_contains($titleLower, 'hosting') || str_contains($titleLower, 'deploy')) $icon = 'cloud';
-                                        elseif (str_contains($titleLower, 'mobile') || str_contains($titleLower, 'app') || str_contains($titleLower, 'flutter') || str_contains($titleLower, 'react native') || str_contains($titleLower, 'android') || str_contains($titleLower, 'ios') || str_contains($titleLower, 'swift') || str_contains($titleLower, 'kotlin')) $icon = 'smartphone';
-                                        elseif (str_contains($titleLower, 'security') || str_contains($titleLower, 'crypt') || str_contains($titleLower, 'cyber') || str_contains($titleLower, 'penetration') || str_contains($titleLower, 'hack')) $icon = 'shield';
-                                        elseif (str_contains($titleLower, 'test') || str_contains($titleLower, 'qa') || str_contains($titleLower, 'cypress') || str_contains($titleLower, 'jest') || str_contains($titleLower, 'unit')) $icon = 'check-square';
-                                        elseif (str_contains($titleLower, 'ai') || str_contains($titleLower, 'learn') || str_contains($titleLower, 'intel') || str_contains($titleLower, 'gpt') || str_contains($titleLower, 'ml') || str_contains($titleLower, 'nlp')) $icon = 'brain';
-                                        elseif (str_contains($titleLower, 'chart') || str_contains($titleLower, 'analy') || str_contains($titleLower, 'bi') || str_contains($titleLower, 'excel')) $icon = 'bar-chart-2';
-                                        elseif (str_contains($titleLower, 'api') || str_contains($titleLower, 'link')) $icon = 'link';
-                                        elseif (str_contains($titleLower, 'micro')) $icon = 'server';
-                                        elseif (str_contains($titleLower, 'docker') || str_contains($titleLower, 'container') || str_contains($titleLower, 'k8s') || str_contains($titleLower, 'kubernetes')) $icon = 'box';
-                                        elseif (str_contains($titleLower, 'serverless') || str_contains($titleLower, 'lambda')) $icon = 'zap';
-                                        elseif (str_contains($titleLower, 'os') || str_contains($titleLower, 'linux') || str_contains($titleLower, 'system') || str_contains($titleLower, 'windows') || str_contains($titleLower, 'ubuntu')) $icon = 'hard-drive';
-                                        elseif (str_contains($titleLower, 'git') || str_contains($titleLower, 'version') || str_contains($titleLower, 'github') || str_contains($titleLower, 'gitlab')) $icon = 'git-pull-request';
-                                        elseif (str_contains($titleLower, 'time') || str_contains($titleLower, 'socket') || str_contains($titleLower, 'pusher') || str_contains($titleLower, 'realtime')) $icon = 'clock';
-                                        elseif (str_contains($titleLower, 'game') || str_contains($titleLower, 'play') || str_contains($titleLower, 'unity') || str_contains($titleLower, 'unreal')) $icon = 'gamepad-2';
-                                        elseif (str_contains($titleLower, 'network') || str_contains($titleLower, 'globe') || str_contains($titleLower, 'http') || str_contains($titleLower, 'dns')) $icon = 'globe';
-                                    @endphp
-                                    <i data-lucide="{{ $icon }}" style="width:24px;height:24px;"></i>
-                                </div>
-                                <h3>{{ $item->title }}</h3>
+                        @php $hasSkills = true; @endphp
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber">
+                                @php
+                                    $titleLower = strtolower($skill->name);
+                                    $icon = 'cpu';
+                                    if (str_contains($titleLower, 'php') || str_contains($titleLower, 'laravel') || str_contains($titleLower, 'back') || str_contains($titleLower, 'infra') || str_contains($titleLower, 'node') || str_contains($titleLower, 'python') || str_contains($titleLower, 'django') || str_contains($titleLower, 'ruby') || str_contains($titleLower, 'go') || str_contains($titleLower, 'java') || str_contains($titleLower, 'c#') || str_contains($titleLower, 'asp') || str_contains($titleLower, 'api') || str_contains($titleLower, 'rest')) $icon = 'terminal';
+                                    elseif (str_contains($titleLower, 'front') || str_contains($titleLower, 'dev') || str_contains($titleLower, 'web') || str_contains($titleLower, 'vue') || str_contains($titleLower, 'react') || str_contains($titleLower, 'angular') || str_contains($titleLower, 'js') || str_contains($titleLower, 'ts') || str_contains($titleLower, 'javascript') || str_contains($titleLower, 'typescript') || str_contains($titleLower, 'css') || str_contains($titleLower, 'html') || str_contains($titleLower, 'tailwind') || str_contains($titleLower, 'sass') || str_contains($titleLower, 'bootstrap')) $icon = 'layers';
+                                    elseif (str_contains($titleLower, 'design') || str_contains($titleLower, 'ui') || str_contains($titleLower, 'ux') || str_contains($titleLower, 'figma') || str_contains($titleLower, 'photoshop') || str_contains($titleLower, 'illustrator') || str_contains($titleLower, 'adobe') || str_contains($titleLower, 'sketch')) $icon = 'git-branch';
+                                    elseif (str_contains($titleLower, 'database') || str_contains($titleLower, 'sql') || str_contains($titleLower, 'db') || str_contains($titleLower, 'mysql') || str_contains($titleLower, 'postgres') || str_contains($titleLower, 'mongo') || str_contains($titleLower, 'oracle') || str_contains($titleLower, 'sqlite') || str_contains($titleLower, 'redis')) $icon = 'database';
+                                    elseif (str_contains($titleLower, 'cloud') || str_contains($titleLower, 'server') || str_contains($titleLower, 'aws') || str_contains($titleLower, 'gcp') || str_contains($titleLower, 'azure') || str_contains($titleLower, 'hosting') || str_contains($titleLower, 'deploy')) $icon = 'cloud';
+                                    elseif (str_contains($titleLower, 'mobile') || str_contains($titleLower, 'app') || str_contains($titleLower, 'flutter') || str_contains($titleLower, 'react native') || str_contains($titleLower, 'android') || str_contains($titleLower, 'ios') || str_contains($titleLower, 'swift') || str_contains($titleLower, 'kotlin')) $icon = 'smartphone';
+                                    elseif (str_contains($titleLower, 'security') || str_contains($titleLower, 'crypt') || str_contains($titleLower, 'cyber') || str_contains($titleLower, 'penetration') || str_contains($titleLower, 'hack')) $icon = 'shield';
+                                    elseif (str_contains($titleLower, 'test') || str_contains($titleLower, 'qa') || str_contains($titleLower, 'cypress') || str_contains($titleLower, 'jest') || str_contains($titleLower, 'unit')) $icon = 'check-square';
+                                    elseif (str_contains($titleLower, 'ai') || str_contains($titleLower, 'learn') || str_contains($titleLower, 'intel') || str_contains($titleLower, 'gpt') || str_contains($titleLower, 'ml') || str_contains($titleLower, 'nlp')) $icon = 'brain';
+                                    elseif (str_contains($titleLower, 'chart') || str_contains($titleLower, 'analy') || str_contains($titleLower, 'bi') || str_contains($titleLower, 'excel')) $icon = 'bar-chart-2';
+                                    elseif (str_contains($titleLower, 'api') || str_contains($titleLower, 'link')) $icon = 'link';
+                                    elseif (str_contains($titleLower, 'micro')) $icon = 'server';
+                                    elseif (str_contains($titleLower, 'docker') || str_contains($titleLower, 'container') || str_contains($titleLower, 'k8s') || str_contains($titleLower, 'kubernetes')) $icon = 'box';
+                                    elseif (str_contains($titleLower, 'serverless') || str_contains($titleLower, 'lambda')) $icon = 'zap';
+                                    elseif (str_contains($titleLower, 'os') || str_contains($titleLower, 'linux') || str_contains($titleLower, 'system') || str_contains($titleLower, 'windows') || str_contains($titleLower, 'ubuntu')) $icon = 'hard-drive';
+                                    elseif (str_contains($titleLower, 'git') || str_contains($titleLower, 'version') || str_contains($titleLower, 'github') || str_contains($titleLower, 'gitlab')) $icon = 'git-pull-request';
+                                    elseif (str_contains($titleLower, 'time') || str_contains($titleLower, 'socket') || str_contains($titleLower, 'pusher') || str_contains($titleLower, 'realtime')) $icon = 'clock';
+                                    elseif (str_contains($titleLower, 'game') || str_contains($titleLower, 'play') || str_contains($titleLower, 'unity') || str_contains($titleLower, 'unreal')) $icon = 'gamepad-2';
+                                    elseif (str_contains($titleLower, 'network') || str_contains($titleLower, 'globe') || str_contains($titleLower, 'http') || str_contains($titleLower, 'dns')) $icon = 'globe';
+                                @endphp
+                                <i data-lucide="{{ $icon }}" style="width:24px;height:24px;"></i>
                             </div>
-                        @endforeach
+                            <h3>{{ $skill->name }}</h3>
+                        </div>
                     @endforeach
 
                     @if(!$hasSkills)
