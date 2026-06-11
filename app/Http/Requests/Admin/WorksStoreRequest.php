@@ -25,7 +25,7 @@ class WorksStoreRequest extends FormRequest
         return [
             'title'       => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'image'       => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'image'       => 'required|image',
             'link'        => 'required|string|max:255',
             'tags'        => 'nullable|string',   // comma-separated → tecknicals
         ];
