@@ -418,27 +418,27 @@
                         <div class="form-group-cyber">
                             <label for="usr-name">Client Identifier</label>
                             <div class="input-cyber-wrapper">
-                                <input type="text" id="usr-name" name="name" class="input-cyber" required placeholder="e.g. John Doe">
+                                <input type="text" id="usr-name" name="name" class="input-cyber"  placeholder="e.g. John Doe">
                             </div>
                         </div>
                         <div class="form-group-cyber">
                             <label for="usr-email">Email Node Address</label>
                             <div class="input-cyber-wrapper">
-                                <input type="email" id="usr-email" name="email" class="input-cyber" required
+                                <input type="email" id="usr-email" name="email" class="input-cyber" 
                                     placeholder="e.g. client@domain.com">
                             </div>
                         </div>
                         <div class="form-group-cyber">
                             <label for="usr-phone">Phone Connection Node</label>
                             <div class="input-cyber-wrapper">
-                                <input type="text" id="usr-phone" name="phone" class="input-cyber" required
+                                <input type="text" id="usr-phone" name="phone" class="input-cyber" 
                                     placeholder="e.g. +966501234567 or 01012345678">
                             </div>
                         </div>
                         <div class="form-group-cyber">
                             <label for="usr-message">Transmission Details</label>
                             <div class="input-cyber-wrapper">
-                                <textarea id="usr-message" name="message" class="input-cyber" required
+                                <textarea id="usr-message" name="message" class="input-cyber" 
                                     placeholder="Describe task scope, technologies, timeline..."></textarea>
                             </div>
                         </div>
@@ -537,6 +537,7 @@
                             });
                         }
                     });
+                }
             });
         });
 
