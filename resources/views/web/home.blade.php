@@ -507,30 +507,39 @@
         });
 
         // Projects slider control script for responsive layout
+        // Projects slider control script for responsive layout
         $(document).ready(function() {
-            const $grid = $('.projects-cyber-grid');
+            const projContainer = document.querySelector(".projects-cyber-grid");
             
             $(document).on('click', '.prev-projects', function(e) {
                 e.preventDefault();
-                const $card = $grid.find('.project-card-cyber').first();
-                if ($card.length) {
-                    const gap = parseFloat($grid.css('gap'));
-                    const scrollAmount = $card.outerWidth() + (isNaN(gap) ? 24 : gap);
-                    $grid.animate({
-                        scrollLeft: $grid.scrollLeft() - scrollAmount
-                    }, 400);
+                if (projContainer) {
+                    const card = projContainer.querySelector(".project-card-cyber");
+                    if (card) {
+                        const gapVal = parseFloat(getComputedStyle(projContainer).gap);
+                        const gap = isNaN(gapVal) ? 24 : gapVal;
+                        const scrollAmount = card.clientWidth + gap;
+                        projContainer.scrollBy({
+                            left: -scrollAmount,
+                            behavior: "smooth"
+                        });
+                    }
                 }
             });
 
             $(document).on('click', '.next-projects', function(e) {
                 e.preventDefault();
-                const $card = $grid.find('.project-card-cyber').first();
-                if ($card.length) {
-                    const gap = parseFloat($grid.css('gap'));
-                    const scrollAmount = $card.outerWidth() + (isNaN(gap) ? 24 : gap);
-                    $grid.animate({
-                        scrollLeft: $grid.scrollLeft() + scrollAmount
-                    }, 400);
+                if (projContainer) {
+                    const card = projContainer.querySelector(".project-card-cyber");
+                    if (card) {
+                        const gapVal = parseFloat(getComputedStyle(projContainer).gap);
+                        const gap = isNaN(gapVal) ? 24 : gapVal;
+                        const scrollAmount = card.clientWidth + gap;
+                        projContainer.scrollBy({
+                            left: scrollAmount,
+                            behavior: "smooth"
+                        });
+                    }
                 }
             });
         });
