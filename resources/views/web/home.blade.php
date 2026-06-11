@@ -51,112 +51,6 @@
         </div>
     </section>
 
-    <!-- PROJECTS/WORKS SECTION -->
-    <section id="works">
-        <div class="container">
-            <div class="header-cyber">
-                <span class="tag-cyber">SYS::{{ $pages['blue_title_works'] }}</span>
-                <h2 class="title-cyber">{{ $pages['works_title'] }}</h2>
-                <p class="desc-cyber">{{ $pages['works_desc'] }}</p>
-            </div>
-
-            <div class="projects-cyber-grid">
-                @forelse ($works as $work)
-                    <div class="project-card-cyber">
-                        <div class="project-cover-cyber">
-                            @if(strpos($work->image, 'http') === 0)
-                                <img src="{{ $work->image }}" alt="{{ $work->title }}">
-                            @else
-                                <img src="{{ asset('storage/' . $work->image) }}" alt="{{ $work->title }}">
-                            @endif
-                        </div>
-                        <div class="project-details-cyber">
-                            <div>
-                                <div class="project-tags-cyber">
-                                    @foreach ($work->tecknicals as $tecknical)
-                                        <span class="tag-badge-cyber">{{ $tecknical->name }}</span>
-                                    @endforeach
-                                </div>
-                                <h3 class="project-title-cyber" style="margin-top:0.8rem;">{{ $work->title }}</h3>
-                                <p class="project-desc-cyber" style="margin-top:0.5rem;">{{ $work->description }}</p>
-                            </div>
-                            <a href="{{ $work->link }}" class="project-link-cyber" style="margin-top:1rem;">
-                                Initialize_Link
-                                <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                @empty
-                    <!-- Project 1 (Fallback) -->
-                    <div class="project-card-cyber">
-                        <div class="project-cover-cyber">
-                            <img src="./images/quantum.png" alt="Quantum Crypto ledger Terminal Preview">
-                        </div>
-                        <div class="project-details-cyber">
-                            <div>
-                                <div class="project-tags-cyber">
-                                    <span class="tag-badge-cyber">Laravel 11</span>
-                                    <span class="tag-badge-cyber">MySQL</span>
-                                    <span class="tag-badge-cyber">Tailwind CSS</span>
-                                </div>
-                                <h3 class="project-title-cyber" style="margin-top:0.8rem;">Quantum Ledger</h3>
-                                <p class="project-desc-cyber" style="margin-top:0.5rem;">Decentralized ledger monitor dashboard integrating real-time telemetry from multiple node pools and validator channels.</p>
-                            </div>
-                            <a href="#" class="project-link-cyber" style="margin-top:1rem;">
-                                Initialize_Link
-                                <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 (Fallback) -->
-                    <div class="project-card-cyber">
-                        <div class="project-cover-cyber">
-                            <img src="./images/vortex.png" alt="Vortex Data Analytics Dashboard Preview">
-                        </div>
-                        <div class="project-details-cyber">
-                            <div>
-                                <div class="project-tags-cyber">
-                                    <span class="tag-badge-cyber">React 18</span>
-                                    <span class="tag-badge-cyber">PHP 8.3</span>
-                                    <span class="tag-badge-cyber">Tailwind CSS</span>
-                                </div>
-                                <h3 class="project-title-cyber" style="margin-top:0.8rem;">Vortex Dashboard</h3>
-                                <p class="project-desc-cyber" style="margin-top:0.5rem;">Metrics logging system streaming client diagnostics via web-sockets with real-time vector graphs and data throttle layers.</p>
-                            </div>
-                            <a href="#" class="project-link-cyber" style="margin-top:1rem;">
-                                Initialize_Link
-                                <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 (Fallback) -->
-                    <div class="project-card-cyber">
-                        <div class="project-cover-cyber">
-                            <img src="./images/nova.png" alt="Nova AI Asset Manager preview">
-                        </div>
-                        <div class="project-details-cyber">
-                            <div>
-                                <div class="project-tags-cyber">
-                                    <span class="tag-badge-cyber">Laravel JobQueue</span>
-                                    <span class="tag-badge-cyber">OpenAI API</span>
-                                    <span class="tag-badge-cyber">Python</span>
-                                </div>
-                                <h3 class="project-title-cyber" style="margin-top:0.8rem;">Nova AI Portal</h3>
-                                <p class="project-desc-cyber" style="margin-top:0.5rem;">AI asset classification manager utilizing asynchronous jobs and workers to index, prompt, and process digital files.</p>
-                            </div>
-                            <a href="#" class="project-link-cyber" style="margin-top:1rem;">
-                                Initialize_Link
-                                <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                @endforelse
-            </div>
-        </div>
-    </section>
-
     <!-- CAPABILITIES SECTION -->
     <section id="skills">
         <div class="container">
@@ -430,6 +324,112 @@
                 }
             });
         </script>
+    </section>
+
+    <!-- PROJECTS/WORKS SECTION -->
+    <section id="works">
+        <div class="container">
+            <div class="header-cyber">
+                <span class="tag-cyber">SYS::{{ $pages['blue_title_works'] }}</span>
+                <h2 class="title-cyber">{{ $pages['works_title'] }}</h2>
+                <p class="desc-cyber">{{ $pages['works_desc'] }}</p>
+            </div>
+
+            <div class="projects-cyber-grid">
+                @forelse ($works as $work)
+                    <div class="project-card-cyber">
+                        <div class="project-cover-cyber">
+                            @if(strpos($work->image, 'http') === 0)
+                                <img src="{{ $work->image }}" alt="{{ $work->title }}">
+                            @else
+                                <img src="{{ asset('storage/' . $work->image) }}" alt="{{ $work->title }}">
+                            @endif
+                        </div>
+                        <div class="project-details-cyber">
+                            <div>
+                                <div class="project-tags-cyber">
+                                    @foreach ($work->tecknicals as $tecknical)
+                                        <span class="tag-badge-cyber">{{ $tecknical->name }}</span>
+                                    @endforeach
+                                </div>
+                                <h3 class="project-title-cyber" style="margin-top:0.8rem;">{{ $work->title }}</h3>
+                                <p class="project-desc-cyber" style="margin-top:0.5rem;">{{ $work->description }}</p>
+                            </div>
+                            <a href="{{ $work->link }}" class="project-link-cyber" style="margin-top:1rem;">
+                                Initialize_Link
+                                <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                @empty
+                    <!-- Project 1 (Fallback) -->
+                    <div class="project-card-cyber">
+                        <div class="project-cover-cyber">
+                            <img src="./images/quantum.png" alt="Quantum Crypto ledger Terminal Preview">
+                        </div>
+                        <div class="project-details-cyber">
+                            <div>
+                                <div class="project-tags-cyber">
+                                    <span class="tag-badge-cyber">Laravel 11</span>
+                                    <span class="tag-badge-cyber">MySQL</span>
+                                    <span class="tag-badge-cyber">Tailwind CSS</span>
+                                </div>
+                                <h3 class="project-title-cyber" style="margin-top:0.8rem;">Quantum Ledger</h3>
+                                <p class="project-desc-cyber" style="margin-top:0.5rem;">Decentralized ledger monitor dashboard integrating real-time telemetry from multiple node pools and validator channels.</p>
+                            </div>
+                            <a href="#" class="project-link-cyber" style="margin-top:1rem;">
+                                Initialize_Link
+                                <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 (Fallback) -->
+                    <div class="project-card-cyber">
+                        <div class="project-cover-cyber">
+                            <img src="./images/vortex.png" alt="Vortex Data Analytics Dashboard Preview">
+                        </div>
+                        <div class="project-details-cyber">
+                            <div>
+                                <div class="project-tags-cyber">
+                                    <span class="tag-badge-cyber">React 18</span>
+                                    <span class="tag-badge-cyber">PHP 8.3</span>
+                                    <span class="tag-badge-cyber">Tailwind CSS</span>
+                                </div>
+                                <h3 class="project-title-cyber" style="margin-top:0.8rem;">Vortex Dashboard</h3>
+                                <p class="project-desc-cyber" style="margin-top:0.5rem;">Metrics logging system streaming client diagnostics via web-sockets with real-time vector graphs and data throttle layers.</p>
+                            </div>
+                            <a href="#" class="project-link-cyber" style="margin-top:1rem;">
+                                Initialize_Link
+                                <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 (Fallback) -->
+                    <div class="project-card-cyber">
+                        <div class="project-cover-cyber">
+                            <img src="./images/nova.png" alt="Nova AI Asset Manager preview">
+                        </div>
+                        <div class="project-details-cyber">
+                            <div>
+                                <div class="project-tags-cyber">
+                                    <span class="tag-badge-cyber">Laravel JobQueue</span>
+                                    <span class="tag-badge-cyber">OpenAI API</span>
+                                    <span class="tag-badge-cyber">Python</span>
+                                </div>
+                                <h3 class="project-title-cyber" style="margin-top:0.8rem;">Nova AI Portal</h3>
+                                <p class="project-desc-cyber" style="margin-top:0.5rem;">AI asset classification manager utilizing asynchronous jobs and workers to index, prompt, and process digital files.</p>
+                            </div>
+                            <a href="#" class="project-link-cyber" style="margin-top:1rem;">
+                                Initialize_Link
+                                <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                @endforelse
+            </div>
+        </div>
     </section>
 
     <!-- CONTACT SECTION -->
