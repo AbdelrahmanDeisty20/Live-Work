@@ -69,228 +69,132 @@
 
             <div class="skills-matrix-wrapper">
                 <div class="skills-matrix">
-                    @forelse($skills as $skill)
-                        <div class="skill-matrix-card">
-                            <div class="skill-card-icon-cyber">
-                                @php
-                                    $titleLower = strtolower($skill->title);
-                                    $icon = 'cpu';
-                                    if (str_contains($titleLower, 'back') || str_contains($titleLower, 'infra')) $icon = 'terminal';
-                                    elseif (str_contains($titleLower, 'front') || str_contains($titleLower, 'dev') || str_contains($titleLower, 'web')) $icon = 'layers';
-                                    elseif (str_contains($titleLower, 'design') || str_contains($titleLower, 'ui') || str_contains($titleLower, 'ux')) $icon = 'git-branch';
-                                    elseif (str_contains($titleLower, 'database') || str_contains($titleLower, 'sql') || str_contains($titleLower, 'db')) $icon = 'database';
-                                    elseif (str_contains($titleLower, 'cloud') || str_contains($titleLower, 'server')) $icon = 'cloud';
-                                    elseif (str_contains($titleLower, 'mobile') || str_contains($titleLower, 'app')) $icon = 'smartphone';
-                                    elseif (str_contains($titleLower, 'security') || str_contains($titleLower, 'crypt')) $icon = 'shield';
-                                    elseif (str_contains($titleLower, 'test') || str_contains($titleLower, 'qa')) $icon = 'check-square';
-                                    elseif (str_contains($titleLower, 'ai') || str_contains($titleLower, 'learn') || str_contains($titleLower, 'intel')) $icon = 'brain';
-                                    elseif (str_contains($titleLower, 'chart') || str_contains($titleLower, 'analy')) $icon = 'bar-chart-2';
-                                    elseif (str_contains($titleLower, 'api') || str_contains($titleLower, 'link')) $icon = 'link';
-                                    elseif (str_contains($titleLower, 'micro')) $icon = 'server';
-                                    elseif (str_contains($titleLower, 'docker') || str_contains($titleLower, 'container')) $icon = 'box';
-                                    elseif (str_contains($titleLower, 'serverless') || str_contains($titleLower, 'lambda')) $icon = 'zap';
-                                    elseif (str_contains($titleLower, 'os') || str_contains($titleLower, 'linux') || str_contains($titleLower, 'system')) $icon = 'hard-drive';
-                                    elseif (str_contains($titleLower, 'git') || str_contains($titleLower, 'version')) $icon = 'git-pull-request';
-                                    elseif (str_contains($titleLower, 'time') || str_contains($titleLower, 'socket')) $icon = 'clock';
-                                    elseif (str_contains($titleLower, 'game') || str_contains($titleLower, 'play')) $icon = 'gamepad-2';
-                                    elseif (str_contains($titleLower, 'network') || str_contains($titleLower, 'globe')) $icon = 'globe';
-                                @endphp
-                                <i data-lucide="{{ $icon }}" style="width:20px;height:20px;"></i>
+                    @php $hasSkills = false; @endphp
+                    @foreach($skills as $skill)
+                        @foreach($skill->contents as $item)
+                            @php $hasSkills = true; @endphp
+                            <div class="skill-matrix-card">
+                                <div class="skill-card-icon-cyber">
+                                    @php
+                                        $titleLower = strtolower($item->title);
+                                        $icon = 'cpu';
+                                        if (str_contains($titleLower, 'php') || str_contains($titleLower, 'laravel') || str_contains($titleLower, 'back') || str_contains($titleLower, 'infra') || str_contains($titleLower, 'node') || str_contains($titleLower, 'python') || str_contains($titleLower, 'django') || str_contains($titleLower, 'ruby') || str_contains($titleLower, 'go') || str_contains($titleLower, 'java') || str_contains($titleLower, 'c#') || str_contains($titleLower, 'asp') || str_contains($titleLower, 'api') || str_contains($titleLower, 'rest')) $icon = 'terminal';
+                                        elseif (str_contains($titleLower, 'front') || str_contains($titleLower, 'dev') || str_contains($titleLower, 'web') || str_contains($titleLower, 'vue') || str_contains($titleLower, 'react') || str_contains($titleLower, 'angular') || str_contains($titleLower, 'js') || str_contains($titleLower, 'ts') || str_contains($titleLower, 'javascript') || str_contains($titleLower, 'typescript') || str_contains($titleLower, 'css') || str_contains($titleLower, 'html') || str_contains($titleLower, 'tailwind') || str_contains($titleLower, 'sass') || str_contains($titleLower, 'bootstrap')) $icon = 'layers';
+                                        elseif (str_contains($titleLower, 'design') || str_contains($titleLower, 'ui') || str_contains($titleLower, 'ux') || str_contains($titleLower, 'figma') || str_contains($titleLower, 'photoshop') || str_contains($titleLower, 'illustrator') || str_contains($titleLower, 'adobe') || str_contains($titleLower, 'sketch')) $icon = 'git-branch';
+                                        elseif (str_contains($titleLower, 'database') || str_contains($titleLower, 'sql') || str_contains($titleLower, 'db') || str_contains($titleLower, 'mysql') || str_contains($titleLower, 'postgres') || str_contains($titleLower, 'mongo') || str_contains($titleLower, 'oracle') || str_contains($titleLower, 'sqlite') || str_contains($titleLower, 'redis')) $icon = 'database';
+                                        elseif (str_contains($titleLower, 'cloud') || str_contains($titleLower, 'server') || str_contains($titleLower, 'aws') || str_contains($titleLower, 'gcp') || str_contains($titleLower, 'azure') || str_contains($titleLower, 'hosting') || str_contains($titleLower, 'deploy')) $icon = 'cloud';
+                                        elseif (str_contains($titleLower, 'mobile') || str_contains($titleLower, 'app') || str_contains($titleLower, 'flutter') || str_contains($titleLower, 'react native') || str_contains($titleLower, 'android') || str_contains($titleLower, 'ios') || str_contains($titleLower, 'swift') || str_contains($titleLower, 'kotlin')) $icon = 'smartphone';
+                                        elseif (str_contains($titleLower, 'security') || str_contains($titleLower, 'crypt') || str_contains($titleLower, 'cyber') || str_contains($titleLower, 'penetration') || str_contains($titleLower, 'hack')) $icon = 'shield';
+                                        elseif (str_contains($titleLower, 'test') || str_contains($titleLower, 'qa') || str_contains($titleLower, 'cypress') || str_contains($titleLower, 'jest') || str_contains($titleLower, 'unit')) $icon = 'check-square';
+                                        elseif (str_contains($titleLower, 'ai') || str_contains($titleLower, 'learn') || str_contains($titleLower, 'intel') || str_contains($titleLower, 'gpt') || str_contains($titleLower, 'ml') || str_contains($titleLower, 'nlp')) $icon = 'brain';
+                                        elseif (str_contains($titleLower, 'chart') || str_contains($titleLower, 'analy') || str_contains($titleLower, 'bi') || str_contains($titleLower, 'excel')) $icon = 'bar-chart-2';
+                                        elseif (str_contains($titleLower, 'api') || str_contains($titleLower, 'link')) $icon = 'link';
+                                        elseif (str_contains($titleLower, 'micro')) $icon = 'server';
+                                        elseif (str_contains($titleLower, 'docker') || str_contains($titleLower, 'container') || str_contains($titleLower, 'k8s') || str_contains($titleLower, 'kubernetes')) $icon = 'box';
+                                        elseif (str_contains($titleLower, 'serverless') || str_contains($titleLower, 'lambda')) $icon = 'zap';
+                                        elseif (str_contains($titleLower, 'os') || str_contains($titleLower, 'linux') || str_contains($titleLower, 'system') || str_contains($titleLower, 'windows') || str_contains($titleLower, 'ubuntu')) $icon = 'hard-drive';
+                                        elseif (str_contains($titleLower, 'git') || str_contains($titleLower, 'version') || str_contains($titleLower, 'github') || str_contains($titleLower, 'gitlab')) $icon = 'git-pull-request';
+                                        elseif (str_contains($titleLower, 'time') || str_contains($titleLower, 'socket') || str_contains($titleLower, 'pusher') || str_contains($titleLower, 'realtime')) $icon = 'clock';
+                                        elseif (str_contains($titleLower, 'game') || str_contains($titleLower, 'play') || str_contains($titleLower, 'unity') || str_contains($titleLower, 'unreal')) $icon = 'gamepad-2';
+                                        elseif (str_contains($titleLower, 'network') || str_contains($titleLower, 'globe') || str_contains($titleLower, 'http') || str_contains($titleLower, 'dns')) $icon = 'globe';
+                                    @endphp
+                                    <i data-lucide="{{ $icon }}" style="width:20px;height:20px;"></i>
+                                </div>
+                                <h3 style="margin-bottom: 0;">{{ $item->title }}</h3>
                             </div>
-                            <h3>{{ $skill->title }}</h3>
-                            <div class="skill-list-cyber">
-                                @foreach($skill->contents as $item)
-                                    <div class="skill-element-cyber">
-                                        <div class="skill-label-cyber">
-                                            <span class="skill-name-cyber">{{ $item->title }}</span>
-                                            <span class="skill-percent-cyber">{{ is_numeric(trim($item->value)) ? trim($item->value) . '%' : $item->value }}</span>
-                                        </div>
-                                        <div class="skill-meter-bg">
-                                            <div class="skill-meter-fill" data-val="{{ $item->percentage }}"></div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    @empty
-                        <!-- Static Fallback: Backend Infrastructure (12 items to test scrollbar overflow) -->
+                        @endforeach
+                    @endforeach
+
+                    @if(!$hasSkills)
                         <div class="skill-matrix-card">
                             <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
-                            <h3>Backend Infrastructure</h3>
-                            <div class="skill-list-cyber">
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">PHP 8 / Laravel 11</span>
-                                        <span class="skill-percent-cyber">95%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="95"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">RESTful API Design</span>
-                                        <span class="skill-percent-cyber">90%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="90"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">SQL Optimization</span>
-                                        <span class="skill-percent-cyber">85%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Firebase Realtime DB</span>
-                                        <span class="skill-percent-cyber">80%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="80"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Redis Caching</span>
-                                        <span class="skill-percent-cyber">85%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Docker Containerization</span>
-                                        <span class="skill-percent-cyber">85%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">GraphQL APIs</span>
-                                        <span class="skill-percent-cyber">80%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="80"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Node.js / Express</span>
-                                        <span class="skill-percent-cyber">75%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="75"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Python / Django</span>
-                                        <span class="skill-percent-cyber">70%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="70"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Git workflows</span>
-                                        <span class="skill-percent-cyber">90%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="90"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Serverless AWS Lambda</span>
-                                        <span class="skill-percent-cyber">82%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="82"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Bash Scripting</span>
-                                        <span class="skill-percent-cyber">85%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
-                                </div>
-                            </div>
+                            <h3 style="margin-bottom: 0;">PHP 8 / Laravel 11</h3>
                         </div>
-
-                        <!-- Static Fallback: Frontend Engineering -->
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">RESTful API Design</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">SQL Optimization</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="database" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Firebase Realtime DB</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="database" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Redis Caching</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="box" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Docker Containerization</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="link" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">GraphQL APIs</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Node.js / Express</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="terminal" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Python / Django</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="git-pull-request" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Git workflows</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="zap" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Serverless AWS Lambda</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="hard-drive" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Bash Scripting</h3>
+                        </div>
                         <div class="skill-matrix-card">
                             <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
-                            <h3>Frontend Engineering</h3>
-                            <div class="skill-list-cyber">
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">JavaScript ES6 / TS</span>
-                                        <span class="skill-percent-cyber">90%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="90"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Vue.js / React</span>
-                                        <span class="skill-percent-cyber">85%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">CSS Grid / Flexbox</span>
-                                        <span class="skill-percent-cyber">95%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="95"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Tailwind CSS styling</span>
-                                        <span class="skill-percent-cyber">92%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="92"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">HTML5 Semantics</span>
-                                        <span class="skill-percent-cyber">98%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="98"></div></div>
-                                </div>
-                            </div>
+                            <h3 style="margin-bottom: 0;">JavaScript ES6 / TS</h3>
                         </div>
-
-                        <!-- Static Fallback: DevOps & Cloud -->
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Vue.js / React</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">CSS Grid / Flexbox</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Tailwind CSS styling</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="layers" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">HTML5 Semantics</h3>
+                        </div>
                         <div class="skill-matrix-card">
                             <div class="skill-card-icon-cyber"><i data-lucide="cloud" style="width:20px;height:20px;"></i></div>
-                            <h3>DevOps & Cloud</h3>
-                            <div class="skill-list-cyber">
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">CI/CD Pipelines</span>
-                                        <span class="skill-percent-cyber">85%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">AWS / GCP Admin</span>
-                                        <span class="skill-percent-cyber">80%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="80"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Kubernetes setup</span>
-                                        <span class="skill-percent-cyber">75%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="75"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">Figma Prototyping</span>
-                                        <span class="skill-percent-cyber">85%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
-                                </div>
-                                <div class="skill-element-cyber">
-                                    <div class="skill-label-cyber">
-                                        <span class="skill-name-cyber">OWASP Security Top 10</span>
-                                        <span class="skill-percent-cyber">85%</span>
-                                    </div>
-                                    <div class="skill-meter-bg"><div class="skill-meter-fill" data-val="85"></div></div>
-                                </div>
-                            </div>
+                            <h3 style="margin-bottom: 0;">CI/CD Pipelines</h3>
                         </div>
-                    @endforelse
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="cloud" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">AWS / GCP Admin</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="box" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Kubernetes setup</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="git-branch" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">Figma Prototyping</h3>
+                        </div>
+                        <div class="skill-matrix-card">
+                            <div class="skill-card-icon-cyber"><i data-lucide="shield" style="width:20px;height:20px;"></i></div>
+                            <h3 style="margin-bottom: 0;">OWASP Security Top 10</h3>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
