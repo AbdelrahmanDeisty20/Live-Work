@@ -331,6 +331,13 @@
                     </div>
                 @endforelse
             </div>
+
+            <div class="works-toggle-container" style="display: none; justify-content: center; margin-top: 3rem;">
+                <button class="btn-outline-cyber" id="toggle-works-btn" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.8rem;">
+                    <span>Initialize More Nodes_</span>
+                    <i data-lucide="chevrons-down" style="width:16px;height:16px;" id="toggle-works-icon"></i>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -497,6 +504,70 @@
                             });
                         }
                     });
+            });
+        });
+
+        // Works Load More/Toggle script for responsive layout
+        $(document).ready(function() {
+            const $grid = $('.projects-cyber-grid');
+            const $cards = $grid.find('.project-card-cyber');
+            const $toggleContainer = $('.works-toggle-container');
+            const $toggleBtn = $('#toggle-works-btn');
+            const $toggleText = $toggleBtn.find('span');
+            const $toggleIcon = $('#toggle-works-icon');
+            
+            let isExpanded = false;
+            const limit = 3;
+            
+            function checkResponsiveness() {
+                const width = $(window).width();
+                if (width <= 768 && $cards.length > limit) {
+                    $toggleContainer.css('display', 'flex');
+                    if (!isExpanded) {
+                        $cards.each(function(index) {
+                            if (index >= limit) {
+                                $(this).hide();
+                            } else {
+                                $(this).show();
+                            }
+                        });
+                    }
+                } else {
+                    $toggleContainer.hide();
+                    $cards.show();
+                }
+            }
+            
+            checkResponsiveness();
+            $(window).on('resize', checkResponsiveness);
+            
+            $toggleBtn.on('click', function() {
+                if (!isExpanded) {
+                    $cards.each(function(index) {
+                        if (index >= limit) {
+                            $(this).fadeIn(400);
+                        }
+                    });
+                    $toggleText.text('Collapse Nodes_');
+                    $toggleIcon.attr('data-lucide', 'chevrons-up');
+                    isExpanded = true;
+                } else {
+                    $cards.each(function(index) {
+                        if (index >= limit) {
+                            $(this).fadeOut(300);
+                        }
+                    });
+                    $toggleText.text('Initialize More Nodes_');
+                    $toggleIcon.attr('data-lucide', 'chevrons-down');
+                    isExpanded = false;
+                    
+                    $('html, body').animate({
+                        scrollTop: $('#works').offset().top - 100
+                    }, 500);
+                }
+                
+                if (window.lucide) {
+                    lucide.createIcons();
                 }
             });
         });
