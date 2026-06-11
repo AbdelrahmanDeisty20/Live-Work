@@ -506,40 +506,56 @@
             });
         });
 
-        // Projects slider control script for responsive layout
-        // Projects slider control script for responsive layout
+        // Projects slider control script with console debugging logs
         $(document).ready(function() {
             const projContainer = document.querySelector(".projects-cyber-grid");
+            console.log("SYS:: Projects slider init. projContainer exists:", !!projContainer);
             
             $(document).on('click', '.prev-projects', function(e) {
                 e.preventDefault();
+                console.log("SYS:: Prev clicked.");
                 if (projContainer) {
                     const card = projContainer.querySelector(".project-card-cyber");
+                    console.log("SYS:: Prev clicked. Card exists:", !!card);
                     if (card) {
                         const gapVal = parseFloat(getComputedStyle(projContainer).gap);
                         const gap = isNaN(gapVal) ? 24 : gapVal;
                         const scrollAmount = card.clientWidth + gap;
+                        console.log("SYS:: Prev info: clientWidth=" + card.clientWidth + ", gap=" + gap + ", scrollAmount=" + scrollAmount + ", currentScrollLeft=" + projContainer.scrollLeft);
                         projContainer.scrollBy({
                             left: -scrollAmount,
                             behavior: "smooth"
                         });
+                        setTimeout(() => {
+                            console.log("SYS:: Prev after scroll scrollLeft=" + projContainer.scrollLeft);
+                        }, 500);
                     }
+                } else {
+                    console.log("SYS:: Prev clicked but projContainer is null!");
                 }
             });
 
             $(document).on('click', '.next-projects', function(e) {
                 e.preventDefault();
+                console.log("SYS:: Next clicked.");
                 if (projContainer) {
                     const card = projContainer.querySelector(".project-card-cyber");
+                    console.log("SYS:: Next clicked. Card exists:", !!card);
                     if (card) {
                         const gapVal = parseFloat(getComputedStyle(projContainer).gap);
                         const gap = isNaN(gapVal) ? 24 : gapVal;
                         const scrollAmount = card.clientWidth + gap;
+                        console.log("SYS:: Next info: clientWidth=" + card.clientWidth + ", gap=" + gap + ", scrollAmount=" + scrollAmount + ", currentScrollLeft=" + projContainer.scrollLeft);
                         projContainer.scrollBy({
                             left: scrollAmount,
                             behavior: "smooth"
                         });
+                        setTimeout(() => {
+                            console.log("SYS:: Next after scroll scrollLeft=" + projContainer.scrollLeft);
+                        }, 500);
                     }
+                } else {
+                    console.log("SYS:: Next clicked but projContainer is null!");
                 }
             });
         });
