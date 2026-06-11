@@ -17,7 +17,7 @@ class WorksUpdateRequest extends FormRequest
         return [
             'id'          => 'required|exists:works,id',
             'title'       => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required|string',
             'image'       => 'nullable|image',
             'link'        => 'required|string|max:255',
             'tags'        => 'nullable|string',   // comma-separated → tecknicals
