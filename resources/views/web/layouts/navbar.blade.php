@@ -23,7 +23,8 @@
             </ul>
             <button class="btn-terminal" onclick="location.href='#contact'">Let's talk</button>
             <button class="mobile-menu-toggle-btn" id="mobile-menu-toggle" aria-label="Toggle Menu">
-                <i data-lucide="menu" id="menu-icon" style="width: 20px; height: 20px;"></i>
+                <i data-lucide="menu" class="icon-menu" style="width: 20px; height: 20px;"></i>
+                <i data-lucide="x" class="icon-close" style="width: 20px; height: 20px;"></i>
             </button>
         </nav>
     </div>
@@ -33,28 +34,19 @@
     document.addEventListener("DOMContentLoaded", () => {
         const toggleBtn = document.getElementById("mobile-menu-toggle");
         const navLinks = document.getElementById("nav-links");
-        const menuIcon = document.getElementById("menu-icon");
 
         if (toggleBtn && navLinks) {
             toggleBtn.addEventListener("click", (e) => {
                 e.stopPropagation();
                 navLinks.classList.toggle("active");
-                
-                // Toggle Lucide Icon between menu and x
-                if (navLinks.classList.contains("active")) {
-                    menuIcon.setAttribute("data-lucide", "x");
-                } else {
-                    menuIcon.setAttribute("data-lucide", "menu");
-                }
-                if (window.lucide) { lucide.createIcons(); }
+                toggleBtn.classList.toggle("active");
             });
 
             // Close menu when clicking on a link
             navLinks.querySelectorAll("a").forEach(link => {
                 link.addEventListener("click", () => {
                     navLinks.classList.remove("active");
-                    menuIcon.setAttribute("data-lucide", "menu");
-                    if (window.lucide) { lucide.createIcons(); }
+                    toggleBtn.classList.remove("active");
                 });
             });
 
@@ -62,8 +54,7 @@
             document.addEventListener("click", (e) => {
                 if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
                     navLinks.classList.remove("active");
-                    menuIcon.setAttribute("data-lucide", "menu");
-                    if (window.lucide) { lucide.createIcons(); }
+                    toggleBtn.classList.remove("active");
                 }
             });
         }

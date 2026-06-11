@@ -32,6 +32,33 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Responsive touch ripple cursor on click/tap
+    const isMobile = () => window.innerWidth <= 868;
+    
+    window.addEventListener("click", (e) => {
+        if (isMobile()) {
+            const cursor = document.getElementById("custom-cursor");
+            const dot = document.getElementById("custom-cursor-dot");
+            if (cursor && dot) {
+                // Set positions
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+                dot.style.left = e.clientX + "px";
+                dot.style.top = e.clientY + "px";
+                
+                // Force layout reflow to restart animation if clicked repeatedly
+                cursor.classList.remove("mobile-ripple");
+                dot.classList.remove("mobile-ripple");
+                void cursor.offsetWidth;
+                void dot.offsetWidth;
+                
+                // Trigger animation
+                cursor.classList.add("mobile-ripple");
+                dot.classList.add("mobile-ripple");
+            }
+        }
+    });
+
     // Expand custom cursor on hover
     const links = document.querySelectorAll("a, button, input, textarea, .project-card-cyber");
     const cursor = document.getElementById("custom-cursor");

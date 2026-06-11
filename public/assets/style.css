@@ -1129,8 +1129,9 @@ textarea.input-cyber {
     pointer-events: none;
     transform: translate(-50%, -50%);
     z-index: 9999;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    transition: opacity 0.3s ease, width 0.2s, height 0.2s, background-color 0.2s;
     mix-blend-mode: difference;
+    opacity: 1;
 }
 
 .custom-cursor-dot {
@@ -1142,7 +1143,55 @@ textarea.input-cyber {
     pointer-events: none;
     transform: translate(-50%, -50%);
     z-index: 9999;
+    transition: opacity 0.3s ease;
+    opacity: 1;
 }
+
+@media (max-width: 868px) {
+    .custom-cursor, .custom-cursor-dot {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .custom-cursor.mobile-ripple {
+        animation: cyberRipple 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+    }
+    .custom-cursor-dot.mobile-ripple {
+        animation: cyberDotRipple 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+    }
+}
+
+@keyframes cyberRipple {
+    0% {
+        opacity: 0.8;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0, 242, 254, 0.2);
+        border-color: var(--neon-cyan);
+    }
+    50% {
+        background-color: rgba(0, 242, 254, 0.05);
+    }
+    100% {
+        opacity: 0;
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        border-color: rgba(0, 242, 254, 0);
+    }
+}
+
+@keyframes cyberDotRipple {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(4);
+    }
+}
+
 
 /* Mobile Menu Toggle Button Styles */
 .mobile-menu-toggle-btn {
@@ -1160,6 +1209,18 @@ textarea.input-cyber {
 .mobile-menu-toggle-btn:hover {
     color: white;
     text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.mobile-menu-toggle-btn .icon-close {
+    display: none !important;
+}
+
+.mobile-menu-toggle-btn.active .icon-menu {
+    display: none !important;
+}
+
+.mobile-menu-toggle-btn.active .icon-close {
+    display: inline-block !important;
 }
 
 /* Responsive configurations */
