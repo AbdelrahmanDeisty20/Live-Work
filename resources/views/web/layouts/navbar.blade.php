@@ -17,8 +17,8 @@
             </a>
             <ul class="nav-links-cyber" id="nav-links">
                 <li class="active"><a href="#about">About</a></li>
-                <li><a href="#works">Works</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#works">Works</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="btn-terminal" onclick="location.href='#contact'">Let's talk</button>
